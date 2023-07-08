@@ -39,38 +39,12 @@ public class Level : MonoBehaviour
 
     void Awake()
     {
-        Initialize();
+     
     }
 
-    void Initialize()
-    {
-        maxExpValue = 50;
-        curExpValue = 0;
-        level = 1;
-        isLevelUpTime = false;
-        expSlider.maxValue = maxExpValue;
-        expSlider.value = curExpValue;
 
-        SlotInitial();
-    }
 
-    void SlotInitial()
-    {
-        for (int i = 0; i < slotNum; i++) {
-            weaponSelect[i] = Instantiate(weaponSelectTemplate, levelUpWindow.transform).GetComponent<RectTransform>();
-            weaponSelect[i].anchoredPosition = new Vector2(0f, -i* slotSize + 150f);
-
-            weaponIcon[i] = weaponSelect[i].Find("WeaponIcon").GetComponent<Image>();
-            nameText[i] = weaponSelect[i].Find("NameText").GetComponent<TextMeshProUGUI>();
-            description[i] = weaponSelect[i].Find("Description").GetComponent<TextMeshProUGUI>();
-            levelText[i] = weaponSelect[i].Find("LevelText").GetComponent<TextMeshProUGUI>();
-            button[i] = weaponSelect[i].Find("Button").GetComponent<Button>();
-            selectArrow[i] = weaponSelect[i].Find("SelectArrow").gameObject;
-
-            weaponSelect[i].gameObject.SetActive(true);
-            selectArrow[i].gameObject.SetActive(false);
-        }
-    }
+ 
 
     public static bool GetIsLevelUpTime()
     {
@@ -97,9 +71,34 @@ public class Level : MonoBehaviour
 
     void LevelUp()
     {
-        isLevelUpTime = true;
-        StartCoroutine(GetNewItem());
-        StartCoroutine(LevelUpEffects());
+        if (level==1)
+        {
+            Inventory.GetInstance().AddWeapon(WeaponData.WeaponType.Axe);
+        }
+        else if (level ==2)
+        {
+            Inventory.GetInstance().AddWeapon(WeaponData.WeaponType.Bible);
+        }
+        else
+        {
+            int x = Random.Range(0, 3);
+            if (x ==0)
+            {
+                Inventory.GetInstance().AddWeapon(WeaponData.WeaponType.Whip);
+            }
+            else if (x == 1)
+            {
+                Inventory.GetInstance().AddWeapon(WeaponData.WeaponType.Axe);
+            }
+            else if (x == 2)
+            {
+                Inventory.GetInstance().AddWeapon(WeaponData.WeaponType.Bible);
+            }
+
+        }
+       
+       
+
 
         level++;
         text.text = "LV " + level.ToString();
@@ -163,30 +162,7 @@ public class Level : MonoBehaviour
                     isLevelUpTime = false; 
                 });
             }
-            else  // ¾Ç¼¼
-            {
-                AccessoryData.AccessoryType accessory;
-                
-                do accessory = GetRandomAccessory();
-                while(checkDuplicate.Contains(accessory.ToString()));
-                checkDuplicate.Add(accessory.ToString());
-
-                weaponIcon[i].sprite = ItemAssets.GetInstance().GetAccessoryData(accessory).GetSprite();
-                nameText[i].text = accessory.ToString();
-                description[i].text = ItemAssets.GetInstance().GetAccessoryData(accessory).GetDescription();
-
-                int level;
-                if (Inventory.GetAccInventory().TryGetValue(accessory, out level))
-                    levelText[i].text = "LV " + (level+1).ToString();
-                else
-                    levelText[i].text = "New !";
-
-                button[i].onClick.RemoveAllListeners();
-                button[i].onClick.AddListener(delegate { 
-                    Inventory.GetInstance().AddAccessory(accessory); 
-                    isLevelUpTime = false; 
-                });
-            }
+       
         }
 
         if(Random.Range(0,100) < Player.GetInstance().GetLuck())

@@ -39,31 +39,7 @@ public class PlayerMove : MonoBehaviour
                 vertical = Mathf.Clamp(vertical, -0.7f, 0.7f);
             }
 
-            if (horizontal != 0f || vertical != 0f)
-            {
-                animator.SetInteger("AnimState", 1);
-
-                if (horizontal > 0f)
-                {
-                    spriteRenderer.flipX = false;
-                    lookingLeft = false;
-                }
-                else if (horizontal < 0f)
-                {
-                    spriteRenderer.flipX = true;
-                    lookingLeft = true;
-                }
-            }
-            else
-            {
-                animator.SetInteger("AnimState", 0);
-            }
-
-            if (!isDead)
-            {
-                transform.Translate(Vector2.right * horizontal * character.GetSpeed() / 10f * Time.deltaTime);
-                transform.Translate(Vector2.up * vertical * character.GetSpeed() / 10f * Time.deltaTime);
-            }
+          
         }
     }
 
