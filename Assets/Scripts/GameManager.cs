@@ -84,10 +84,10 @@ public class GameManager : MonoBehaviour
 			Invoke("Shuffle",0.0f);
 		}
 		elapsedTime = Time.time - startTime;
-		/*if (elapsedTime >= 5f)
+		if (elapsedTime >= 5f)
         {
 			startTime = elapsedTime;
-            Invoke("DrawCard",1f);
-        }*/
+
+        }
 	}
 }

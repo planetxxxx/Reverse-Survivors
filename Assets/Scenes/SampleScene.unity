@@ -942,12 +942,12 @@ PrefabInstance:
     - target: {fileID: 6717292060567749383, guid: ad587e0b70be0bb4880d92617c9575a7,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3.61
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6717292060567749383, guid: ad587e0b70be0bb4880d92617c9575a7,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 4.470909
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad587e0b70be0bb4880d92617c9575a7, type: 3}
@@ -974,7 +974,7 @@ GameObject:
   - component: {fileID: 279846835}
   - component: {fileID: 279846836}
   m_Layer: 0
-  m_Name: fixed (7)
+  m_Name: Card (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1809,12 +1809,12 @@ PrefabInstance:
     - target: {fileID: 6717292060567749383, guid: ad587e0b70be0bb4880d92617c9575a7,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3.59
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6717292060567749383, guid: ad587e0b70be0bb4880d92617c9575a7,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 4.3708887
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad587e0b70be0bb4880d92617c9575a7, type: 3}
@@ -1888,7 +1888,7 @@ GameObject:
   - component: {fileID: 701181719}
   - component: {fileID: 701181720}
   m_Layer: 0
-  m_Name: fixed (2)
+  m_Name: Card (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1977,7 +1977,7 @@ GameObject:
   - component: {fileID: 729642103}
   - component: {fileID: 729642104}
   m_Layer: 0
-  m_Name: fixed
+  m_Name: Card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2338,7 +2338,7 @@ GameObject:
   - component: {fileID: 783479581}
   - component: {fileID: 783479582}
   m_Layer: 0
-  m_Name: fixed (3)
+  m_Name: Card (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2754,7 +2754,7 @@ GameObject:
   - component: {fileID: 1008286735}
   - component: {fileID: 1008286736}
   m_Layer: 0
-  m_Name: fixed (1)
+  m_Name: Card (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3221,7 +3221,7 @@ GameObject:
   - component: {fileID: 1344106158}
   - component: {fileID: 1344106159}
   m_Layer: 0
-  m_Name: fixed (5)
+  m_Name: Card (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4053,7 +4053,7 @@ GameObject:
   - component: {fileID: 1539199881}
   - component: {fileID: 1539199882}
   m_Layer: 0
-  m_Name: fixed (4)
+  m_Name: Card (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4494,12 +4494,12 @@ PrefabInstance:
     - target: {fileID: 6717292060567749383, guid: ad587e0b70be0bb4880d92617c9575a7,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3.62
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6717292060567749383, guid: ad587e0b70be0bb4880d92617c9575a7,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 4.4108973
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad587e0b70be0bb4880d92617c9575a7, type: 3}
@@ -4769,7 +4769,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820414365}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -4852,7 +4852,7 @@ GameObject:
   - component: {fileID: 1835165301}
   - component: {fileID: 1835165302}
   m_Layer: 0
-  m_Name: fixed (6)
+  m_Name: Card (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

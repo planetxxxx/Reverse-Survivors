@@ -16,15 +16,8 @@ public class Card : MonoBehaviour
 	public GameObject effect;
 	public GameObject hollowCircle;
 
-	private bool isDragging = false;
-    private Vector3 offset;
-	private float doubleClickTimeThreshold = 0.3f;
-    private bool isClickInProgress = false;
-    private float lastClickTime = 0f;
-	private bool isTriggered = false;
-	bool doubleClicked;
 	GameObject childObject;
-	bool activChild = false;
+	bool activChild, isfixed = false;
 
 
 	private void Start()
@@ -34,50 +27,6 @@ public class Card : MonoBehaviour
 		camAnim = Camera.main.GetComponent<Animator>();
 	}
 
-    private void Update()
-    {
-
-        if (isDragging)
-        {
-            // Update the object's position based on the mouse position
-            Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
-            transform.position = new Vector3(newPosition.x, newPosition.y, transform.position.z);
-		}
-		if (Input.GetMouseButtonDown(0))
-        {
-            if (!isClickInProgress)
-            {
-                // Start the click sequence
-                isClickInProgress = true;
-                lastClickTime = Time.time;
-				doubleClicked = false;
-            }
-            else
-            {
-                // Double-click detected
-                float timeSinceLastClick = Time.time - lastClickTime;
-                if (timeSinceLastClick <= doubleClickTimeThreshold)
-                {
-					doubleClicked = true;
-					Debug.Log(doubleClicked);
-					childObject.SetActive(!activChild);
-					activChild = !activChild;
-
-
-					
-                }
-
-                isClickInProgress = false;
-            }
-		}
-		if(gm.elapsedTime >= 5)
-		{
-			gm.startTime = gm.elapsedTime;
-            //Invoke("destroyCardAfterTime",0f);
-		}
-        
-    }
-
 	void MoveToDiscardPile()
 	{
 		Instantiate(effect, transform.position, Quaternion.identity);
@@ -85,60 +34,35 @@ public class Card : MonoBehaviour
 		gameObject.SetActive(false);
 	}
 
-	private void OnMouseDown()
-    {
-        offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    }
+  
 
-    private void OnMouseDrag()
+    private void OnMouseOver()
     {
-        isDragging = true;
-    }
-
-    private void OnMouseUp()
-    {
-		Debug.Log(gameObject);
+		if(Input.GetMouseButtonDown(0) && !isfixed)
+		{
+			Invoke("destroyCard",0.5f);
+		}
+		if(Input.GetMouseButtonDown(1))
+		{
+			childObject.SetActive(!activChild);
+			activChild = !activChild;
+			isfixed = !isfixed;
+		}
 		childObject = transform.GetChild(0).gameObject;
-        if (isDragging)
-        {
-			Invoke("destroyCard", 1f);
-			Debug.Log("drag");
-        }
-
-        isDragging = false;
     }
 
-	private void OnTriggerExit2D(Collider2D collision)
-	{
-		if(collision.gameObject.tag == "card ui")
-		{
-			isTriggered = false;
-		}
-		else if (collision.gameObject.tag == "playground")
-		{
-			isTriggered = true;
-		}
-	}
-
-	private void OntriggerEnter2D(Collider2D collision)
-	{
-		Debug.Log("heheheheheheheh");
-	}
 
 	public void destroyCard()
 	{
-		if(!isTriggered && !doubleClicked)
-		{
-			Instantiate(hollowCircle, transform.position, Quaternion.identity);
+		Instantiate(hollowCircle, transform.position, Quaternion.identity);
 		
-			camAnim.SetTrigger("shake");
-			anim.SetTrigger("move");
+		camAnim.SetTrigger("shake");
+		anim.SetTrigger("move");
 			
-			gm.availableCardSlots[handIndex] = true;
-			Invoke("MoveToDiscardPile", 0.5f);
+		gm.availableCardSlots[handIndex] = true;
+		Invoke("MoveToDiscardPile", 0.5f);
 			
-			gm.cardInHand--;
-		}
+		gm.cardInHand--;
 	}
 
 	public void destroyCardAfterTime()
