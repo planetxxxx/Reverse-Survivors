@@ -78,11 +78,11 @@ public class Level : MonoBehaviour
         expSlider.maxValue = maxExpValue;
         if (level==2)
         {
-            Inventory.GetInstance().AddWeapon(WeaponData.WeaponType.Axe);
+            Inventory.GetInstance().AddWeapon(WeaponData.WeaponType.MagicWand);
         }
         else if (level ==3)
         {
-            Inventory.GetInstance().AddWeapon(WeaponData.WeaponType.Bible);
+            Inventory.GetInstance().AddWeapon(WeaponData.WeaponType.Lightning);
         }
         else
         {
@@ -93,11 +93,11 @@ public class Level : MonoBehaviour
             }
             else if (x == 1)
             {
-                Inventory.GetInstance().AddWeapon(WeaponData.WeaponType.Axe);
+                Inventory.GetInstance().AddWeapon(WeaponData.WeaponType.MagicWand);
             }
             else if (x == 2)
             {
-                Inventory.GetInstance().AddWeapon(WeaponData.WeaponType.Bible);
+                Inventory.GetInstance().AddWeapon(WeaponData.WeaponType.Lightning);
             }
             else if (x == 3)
             {

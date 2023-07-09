@@ -184,12 +184,7 @@ public class EnemySpawner : MonoBehaviour
 
 
     
-    public void IncreaseKillCount()
-    {
-        ++killCount;
-
-        killCountText.text = killCount.ToString();
-    }
+    
 
     public static EnemySpawner GetInstance()
     {

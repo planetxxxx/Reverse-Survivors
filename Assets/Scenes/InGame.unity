@@ -28842,6 +28842,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Whip
       objectReference: {fileID: 0}
+    - target: {fileID: 2855942025031640944, guid: ec70fe3c938acd04fb8297a425422c29,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2855942025031640945, guid: ec70fe3c938acd04fb8297a425422c29,
         type: 3}
       propertyPath: spawner

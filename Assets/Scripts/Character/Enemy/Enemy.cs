@@ -75,8 +75,7 @@ public class Enemy : Character
 
     public override void Die()
     {
-        EnemySpawner.GetInstance().IncreaseKillCount();
-
+       
         if (Random.Range(0, 10) > 5)
             DropCrystral();
 
