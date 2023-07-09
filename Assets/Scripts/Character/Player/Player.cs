@@ -25,8 +25,8 @@ public class Player : Character
         base.Initialize();
         GameOverWindow.SetActive(false);
         instance = this;
-        attackSpeed = 100f;
-        expAdditional = 100f;
+        attackSpeed = 1f;
+        expAdditional = 300f;
         luck = 0;
         hpSlider.maxValue = GetHealthPoint();
         hpSlider.value = GetHealthPoint();

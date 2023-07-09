@@ -44,7 +44,7 @@ public class Level : MonoBehaviour
 
     void Initialize()
     {
-        maxExpValue = 50;
+        maxExpValue = 5;
         curExpValue = 0;
         level = 1;
         isLevelUpTime = false;
@@ -134,7 +134,7 @@ public class Level : MonoBehaviour
 
         for (int i = 0; i < slotNum; i++)
         {
-            if (Random.Range(0, 10) < 4)    // ¹«±â
+            if (Random.Range(0, 10) < 4)    // ï¿½ï¿½ï¿½ï¿½
             {
                 WeaponData.WeaponType weapon;
 
@@ -163,7 +163,7 @@ public class Level : MonoBehaviour
                     isLevelUpTime = false; 
                 });
             }
-            else  // ¾Ç¼¼
+            else  // ï¿½Ç¼ï¿½
             {
                 AccessoryData.AccessoryType accessory;
                 
