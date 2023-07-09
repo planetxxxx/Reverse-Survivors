@@ -33,6 +33,7 @@ public class Card : MonoBehaviour
 		gm = FindObjectOfType<GameManager>();
 		anim = GetComponent<Animator>();
 		camAnim = Camera.main.GetComponent<Animator>();
+		//InvokeRepeating("destroyCardAfterTime",5f,5f);
 	}
 
     private void Update()
@@ -90,29 +91,24 @@ public class Card : MonoBehaviour
         if (isDragging)
         {
 			Invoke("destroyCard", 0.5f);
+			Debug.Log(isDragging);
         }
 
         isDragging = false;
     }
-	private void OntriggerEnter2D(Collider2D collision)
-	{
 
-	}
 	private void OnTriggerExit2D(Collider2D collision)
 	{
-		if(collision.gameObject.tag == "playground")
+		if(collision.gameObject.tag == "card ui")
 		{
-			isTriggered = true;
-			Debug.Log("exit");
+			isTriggered = false;
 		}
-		else
+		else if (collision.gameObject.tag == "playground")
 		{
 			isTriggered = true;
-			Debug.Log("enter");
-
-
 		}
 	}
+
 	public void destroyCard()
 	{
 		if(!isTriggered && !doubleClicked)
@@ -127,5 +123,18 @@ public class Card : MonoBehaviour
 			
 			gm.cardInHand--;
 		}
+	}
+
+	public void destroyCardAfterTime()
+	{
+		//Instantiate(hollowCircle, transform.position, Quaternion.identity);
+		
+		//camAnim.SetTrigger("shake");
+		//anim.SetTrigger("move");
+			
+		gm.availableCardSlots[handIndex] = true;
+		Invoke("MoveToDiscardPile", 0.5f);
+			
+		gm.cardInHand--;
 	}
 }

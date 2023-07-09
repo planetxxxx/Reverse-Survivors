@@ -145,7 +145,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2046621808, guid: b922d3369baae4e479ff1294d644fb88,
+      objectReference: {fileID: 21300000, guid: de93aab3b9fd9d24dba981f040e92022,
         type: 3}
     - target: {fileID: 232972788841019143, guid: ad587e0b70be0bb4880d92617c9575a7,
         type: 3}
@@ -455,6 +455,7 @@ Transform:
   - {fileID: 835979014}
   - {fileID: 1022602353}
   - {fileID: 1820414366}
+  - {fileID: 955132836}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -517,7 +518,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 960540728, guid: b922d3369baae4e479ff1294d644fb88,
+      objectReference: {fileID: 21300000, guid: 08013d5e3ccab93409f67b8024d16e90,
         type: 3}
     - target: {fileID: 232972788841019143, guid: ad587e0b70be0bb4880d92617c9575a7,
         type: 3}
@@ -996,19 +997,6 @@ MonoBehaviour:
   numberOfCards: 3
   cardInHand: 0
   delayBeforeRestart: 1
-  startTime: 0
-  elapsedTime: 0
-  cards:
-  - {fileID: 1794558081}
-  - {fileID: 1981956147}
-  - {fileID: 164348632}
-  - {fileID: 1583438759}
-  - {fileID: 1354337848}
-  - {fileID: 519847255}
-  - {fileID: 1325604812}
-  - {fileID: 1515884945}
-  - {fileID: 1972855691}
-  - {fileID: 1510045182}
 --- !u!4 &301529597
 Transform:
   m_ObjectHideFlags: 0
@@ -1577,7 +1565,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1091858922, guid: b922d3369baae4e479ff1294d644fb88,
+      objectReference: {fileID: 21300000, guid: fcc1d7e76fa6fb1428da61494f0342a1,
         type: 3}
     - target: {fileID: 232972788841019143, guid: ad587e0b70be0bb4880d92617c9575a7,
         type: 3}
@@ -2527,6 +2515,64 @@ Transform:
   m_Father: {fileID: 63325192}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &955132835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 955132836}
+  - component: {fileID: 955132837}
+  m_Layer: 0
+  m_Name: playground
+  m_TagString: playground
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &955132836
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955132835}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 213.41, y: 96.69, z: 0}
+  m_LocalScale: {x: 19.425, y: 3.771749, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 63325192}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &955132837
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955132835}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.3139082}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.7192326}
+  m_EdgeRadius: 0
 --- !u!1 &962450847
 GameObject:
   m_ObjectHideFlags: 0
@@ -2764,7 +2810,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -50235737, guid: b922d3369baae4e479ff1294d644fb88,
+      objectReference: {fileID: 21300000, guid: 87cb9e88e6ec356418d05685f5f21a97,
         type: 3}
     - target: {fileID: 232972788841019143, guid: ad587e0b70be0bb4880d92617c9575a7,
         type: 3}
@@ -3376,7 +3422,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 871237640, guid: b922d3369baae4e479ff1294d644fb88,
+      objectReference: {fileID: 21300000, guid: e7f0d7a5b77a88b4993fa38c21f767d5,
         type: 3}
     - target: {fileID: 232972788841019143, guid: ad587e0b70be0bb4880d92617c9575a7,
         type: 3}
@@ -4466,7 +4512,7 @@ GameObject:
   - component: {fileID: 1820414367}
   m_Layer: 0
   m_Name: CardPlace
-  m_TagString: playground
+  m_TagString: card ui
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4499,7 +4545,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.3536586}
+  m_Offset: {x: 0, y: 0.0037555099}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4510,7 +4556,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.7074168}
+  m_Size: {x: 1, y: 0.992589}
   m_EdgeRadius: 0
 --- !u!212 &1820414368
 SpriteRenderer:
