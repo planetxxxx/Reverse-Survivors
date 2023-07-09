@@ -42,12 +42,12 @@ public class Card : MonoBehaviour
 		{
 			Invoke("destroyCard",0.5f);
 		}
-		if(Input.GetMouseButtonDown(1))
+		/*if(Input.GetMouseButtonDown(1))
 		{
 			childObject.SetActive(!activChild);
 			activChild = !activChild;
 			isfixed = !isfixed;
-		}
+		}*/
 		childObject = transform.GetChild(0).gameObject;
     }
 
@@ -64,19 +64,4 @@ public class Card : MonoBehaviour
 			
 		gm.cardInHand--;
 	}
-
-	public void destroyCardAfterTime()
-	{
-		//Instantiate(hollowCircle, transform.position, Quaternion.identity);
-		
-		//camAnim.SetTrigger("shake");
-		//anim.SetTrigger("move");
-			
-		gm.availableCardSlots[handIndex] = true;
-		Invoke("MoveToDiscardPile", 0.5f);
-			
-		gm.cardInHand--;
-		gm.GetComponent<GameManager>().DrawCard();
-	}
-
 }

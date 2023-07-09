@@ -42,8 +42,6 @@ public class GameManager : MonoBehaviour
 	{
 		if (deck.Count >= 1)
 		{
-			//camAnim.SetTrigger("shake");
-
 			Card randomCard = deck[Random.Range(0, deck.Count)];
 			for (int i = 0; i < availableCardSlots.Length; i++)
 			{
@@ -89,5 +87,9 @@ public class GameManager : MonoBehaviour
 			startTime = elapsedTime;
 
         }
+		if(cardInHand < 3)
+		{
+			Invoke("DrawCard",0.5f);
+		}
 	}
 }
