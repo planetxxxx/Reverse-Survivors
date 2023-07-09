@@ -23,17 +23,15 @@ public class Card : MonoBehaviour
     private float lastClickTime = 0f;
 	private bool isTriggered = false;
 	bool doubleClicked;
+	GameObject childObject;
+	bool activChild = false;
 
-
-
-	
 
 	private void Start()
 	{
 		gm = FindObjectOfType<GameManager>();
 		anim = GetComponent<Animator>();
 		camAnim = Camera.main.GetComponent<Animator>();
-		//InvokeRepeating("destroyCardAfterTime",5f,5f);
 	}
 
     private void Update()
@@ -61,10 +59,21 @@ public class Card : MonoBehaviour
                 if (timeSinceLastClick <= doubleClickTimeThreshold)
                 {
 					doubleClicked = true;
+					Debug.Log(doubleClicked);
+					childObject.SetActive(!activChild);
+					activChild = !activChild;
+
+
+					
                 }
 
                 isClickInProgress = false;
             }
+		}
+		if(gm.elapsedTime >= 5)
+		{
+			gm.startTime = gm.elapsedTime;
+            //Invoke("destroyCardAfterTime",0f);
 		}
         
     }
@@ -88,10 +97,12 @@ public class Card : MonoBehaviour
 
     private void OnMouseUp()
     {
+		Debug.Log(gameObject);
+		childObject = transform.GetChild(0).gameObject;
         if (isDragging)
         {
-			Invoke("destroyCard", 0.5f);
-			Debug.Log(isDragging);
+			Invoke("destroyCard", 1f);
+			Debug.Log("drag");
         }
 
         isDragging = false;
@@ -107,6 +118,11 @@ public class Card : MonoBehaviour
 		{
 			isTriggered = true;
 		}
+	}
+
+	private void OntriggerEnter2D(Collider2D collision)
+	{
+		Debug.Log("heheheheheheheh");
 	}
 
 	public void destroyCard()
@@ -136,5 +152,7 @@ public class Card : MonoBehaviour
 		Invoke("MoveToDiscardPile", 0.5f);
 			
 		gm.cardInHand--;
+		gm.GetComponent<GameManager>().DrawCard();
 	}
+
 }

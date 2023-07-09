@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public int cardInHand = 0;
     public float delayBeforeRestart = 1f;
 	private List<GameObject> clones = new List<GameObject>();
+	public float startTime, elapsedTime;
 
 
 
@@ -30,6 +31,11 @@ public class GameManager : MonoBehaviour
 	private void Start()
 	{
 		camAnim = Camera.main.GetComponent<Animator>();
+		for(int i = 0; i <= 3; i++)
+		{
+			Invoke("DrawCard",0f);
+		}
+		startTime = Time.time;
 	}
 
 	public void DrawCard()
@@ -69,7 +75,7 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	private void FixedUpdate()
+	private void Update()
 	{
 		deckSizeText.text = deck.Count.ToString();
 		discardPileSizeText.text = discardPile.Count.ToString();
@@ -77,9 +83,11 @@ public class GameManager : MonoBehaviour
 		{
 			Invoke("Shuffle",0.0f);
 		}
-		if (cardInHand < 3)
+		elapsedTime = Time.time - startTime;
+		/*if (elapsedTime >= 5f)
         {
+			startTime = elapsedTime;
             Invoke("DrawCard",1f);
-        }
+        }*/
 	}
 }
