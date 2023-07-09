@@ -71,11 +71,12 @@ public class Level : MonoBehaviour
 
     void LevelUp()
     {
-        if (level==1)
+        level++;
+        if (level==2)
         {
             Inventory.GetInstance().AddWeapon(WeaponData.WeaponType.Axe);
         }
-        else if (level ==2)
+        else if (level ==3)
         {
             Inventory.GetInstance().AddWeapon(WeaponData.WeaponType.Bible);
         }
@@ -100,7 +101,7 @@ public class Level : MonoBehaviour
        
 
 
-        level++;
+        
         text.text = "LV " + level.ToString();
 
         maxExpValue = 50 * level;

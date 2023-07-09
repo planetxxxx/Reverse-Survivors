@@ -15,6 +15,7 @@ public class EnemySpawner : MonoBehaviour
     float spawnDelay;
     int stage;
     int killCount;
+    int spawnCount=0;
 
     private EnemySpawner() { }
     
@@ -33,45 +34,84 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(SpawnEnemy());
-        StartCoroutine(listChecker());
     }
 
     void Initialize()
     {
         instance = this;
         spawnDelay = 0.5f;
-        stage = 1;
         killCount = 0;
     }
 
+    public void ChangeStage()
+    {
+        if (stage==5)
+        {
+            stage = 0;
+        }
+        stage++;
+        StartCoroutine(SpawnEnemy());
+        StartCoroutine(listChecker());
+    }
     IEnumerator SpawnEnemy()
     {
         GameObject newEnemy;
 
-        while (true)
-        {
+     
             switch (stage)
             {
                 default:
                 case 1:
+                   
+                while (spawnCount<5)
+                {
                     newEnemy = ObjectPooling.GetObject(CharacterData.CharacterType.FlyingEye);
-                    break;
-                case 2:
-                    newEnemy = ObjectPooling.GetObject(CharacterData.CharacterType.Goblin);
-                    break;
-                case 3:
-                    newEnemy = ObjectPooling.GetObject(CharacterData.CharacterType.Mushroom);
-                    break;
-                case 4:
-                case 5:
-                    newEnemy = ObjectPooling.GetObject(CharacterData.CharacterType.Skeleton);
-                    break;
-            }
+                    spawnCount++;
+                    newEnemy.transform.position = RandomPosition();
+                    newEnemy.SetActive(true);
+                    enemyList.Add(newEnemy);
+                }
+                spawnCount = 0;
+                break;
 
-            newEnemy.transform.position = RandomPosition();
-            newEnemy.SetActive(true);
-            enemyList.Add(newEnemy);
+                case 2:
+                   
+                while (spawnCount < 3)
+                {
+                    newEnemy = ObjectPooling.GetObject(CharacterData.CharacterType.Goblin);
+                    spawnCount++;
+                    newEnemy.transform.position = RandomPosition();
+                    newEnemy.SetActive(true);
+                    enemyList.Add(newEnemy);
+                }
+                spawnCount = 0;
+                break;
+                case 3:
+                    
+                while (spawnCount < 2)
+                {
+                    newEnemy = ObjectPooling.GetObject(CharacterData.CharacterType.Mushroom);
+                    spawnCount++;
+                    newEnemy.transform.position = RandomPosition();
+                    newEnemy.SetActive(true);
+                    enemyList.Add(newEnemy);
+                }
+                spawnCount = 0;
+                break;
+                case 4:
+                newEnemy = ObjectPooling.GetObject(CharacterData.CharacterType.FlyingEye);
+                newEnemy.transform.position = RandomPosition();
+                newEnemy.SetActive(true);
+                enemyList.Add(newEnemy);
+                break;
+            case 5:
+                    newEnemy = ObjectPooling.GetObject(CharacterData.CharacterType.Skeleton);
+                newEnemy.transform.position = RandomPosition();
+                newEnemy.SetActive(true);
+                enemyList.Add(newEnemy);
+                break;
+         
+            
 
             if(stage == 5)
             {
@@ -94,20 +134,20 @@ public class EnemySpawner : MonoBehaviour
         switch (direction)
         {
             case Direction.North:
-                pos.x = Random.Range(player.transform.position.x - maxX, player.transform.position.x + maxX);
+                pos.x = Random.Range(player.transform.position.x - 5, player.transform.position.x + 5);
                 pos.y = player.transform.position.y + 10f;
                 break;
             case Direction.South:
-                pos.x = Random.Range(player.transform.position.x - maxX, player.transform.position.x + maxX);
+                pos.x = Random.Range(player.transform.position.x - 5, player.transform.position.x + 5);
                 pos.y = player.transform.position.y - 10f;
                 break;
             case Direction.West:
                 pos.x = player.transform.position.x - 16f;
-                pos.y = Random.Range(player.transform.position.y - maxY, player.transform.position.y + maxY);
+                pos.y = Random.Range(player.transform.position.y - 8, player.transform.position.y + 8);
                 break;
             case Direction.East:
                 pos.x = player.transform.position.x + 15f;
-                pos.y = Random.Range(player.transform.position.y - maxY, player.transform.position.y + maxY);
+                pos.y = Random.Range(player.transform.position.y - 8, player.transform.position.y + 8);
                 break;
         }
 
@@ -150,18 +190,7 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    public void IncreaseStage()
-    {
-        ++stage;
 
-        switch (stage)
-        {
-            case 3:
-            case 4:
-                spawnDelay *= DecreseSpawnDelayTime;
-                break;
-        }
-    }
     
     public void IncreaseKillCount()
     {

@@ -40,8 +40,8 @@ public class Timer : MonoBehaviour
                 ++minute;
                 second = 0;
 
-                if (minute != 0 && minute != 10 && minute % 2 == 0)
-                    EnemySpawner.GetInstance().IncreaseStage();
+                
+                    
             }
 
             if (second < 10)
