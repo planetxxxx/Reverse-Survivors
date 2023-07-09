@@ -45,4 +45,5 @@ public class EnemyMove : MonoBehaviour
     {
         return direction;
     }
+    
 }
