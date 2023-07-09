@@ -86,7 +86,7 @@ public class Level : MonoBehaviour
         }
         else
         {
-            int x = Random.Range(0, 3);
+            int x = Random.Range(0, 6);
             if (x ==0)
             {
                 Inventory.GetInstance().AddWeapon(WeaponData.WeaponType.Whip);
@@ -98,6 +98,18 @@ public class Level : MonoBehaviour
             else if (x == 2)
             {
                 Inventory.GetInstance().AddWeapon(WeaponData.WeaponType.Bible);
+            }
+            else if (x == 3)
+            {
+                Inventory.GetInstance().AddAccessory(AccessoryData.AccessoryType.Spinach);
+            }
+            else if (x == 4)
+            {
+                Inventory.GetInstance().AddAccessory(AccessoryData.AccessoryType.EmptyTome);
+            }
+            else if (x == 5)
+            {
+                Inventory.GetInstance().AddAccessory(AccessoryData.AccessoryType.Armor);
             }
 
         }

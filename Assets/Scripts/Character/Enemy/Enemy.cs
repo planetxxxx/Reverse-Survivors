@@ -70,7 +70,7 @@ public class Enemy : Character
 
     void KnockBack()
     {
-        rigidbody.AddForce(enemyMove.GetDirection() * -2f, ForceMode2D.Impulse);
+       /* rigidbody.AddForce(enemyMove.GetDirection() * -2f, ForceMode2D.Impulse);*/
     }
 
     public override void Die()
