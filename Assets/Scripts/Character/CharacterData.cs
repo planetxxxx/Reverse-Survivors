@@ -13,10 +13,11 @@ public class CharacterData : ScriptableObject
 
     public enum CharacterType
     {
-        FlyingEye,
-        Goblin,
+        Bat,
         Skeleton,
-        Mushroom,
+        Werewolf,
+        Golem,
+        Witch,
         Knight,
         Bandit
     }

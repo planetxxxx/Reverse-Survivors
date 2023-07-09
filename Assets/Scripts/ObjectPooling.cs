@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class ObjectPooling : MonoBehaviour
 {
-    [SerializeField] GameObject flyingEyePrefab;
-    [SerializeField] GameObject goblinPrefab;
-    [SerializeField] GameObject mushroomPrefab;
+    [SerializeField] GameObject batPrefab;
     [SerializeField] GameObject skeletonPrefab;
+    [SerializeField] GameObject werewolfPrefab;
+    [SerializeField] GameObject golemPrefab;
+    [SerializeField] GameObject witchPrefab;
 
     [SerializeField] GameObject whipPrefab;
     [SerializeField] GameObject biblePrefab;
@@ -95,17 +96,20 @@ public class ObjectPooling : MonoBehaviour
         switch (type)
         {
             default:
-            case CharacterData.CharacterType.FlyingEye:
-                newObject = Instantiate(instance.flyingEyePrefab);
-                break;
-            case CharacterData.CharacterType.Goblin:
-                newObject = Instantiate(instance.goblinPrefab);
-                break;
-            case CharacterData.CharacterType.Mushroom:
-                newObject = Instantiate(instance.mushroomPrefab);
+            case CharacterData.CharacterType.Bat:
+                newObject = Instantiate(instance.batPrefab);
                 break;
             case CharacterData.CharacterType.Skeleton:
                 newObject = Instantiate(instance.skeletonPrefab);
+                break;
+            case CharacterData.CharacterType.Werewolf:
+                newObject = Instantiate(instance.werewolfPrefab);
+                break;
+            case CharacterData.CharacterType.Witch:
+                newObject = Instantiate(instance.witchPrefab);
+                break;
+            case CharacterData.CharacterType.Golem:
+                newObject = Instantiate(instance.golemPrefab);
                 break;
 
             case WeaponData.WeaponType.Whip:

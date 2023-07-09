@@ -13,6 +13,7 @@ public class EnemyMove : MonoBehaviour
 
     void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         Initialize();
     }
 
@@ -36,6 +37,7 @@ public class EnemyMove : MonoBehaviour
 
     void Initialize()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         character = GetComponent<Enemy>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         direction = new Vector2();

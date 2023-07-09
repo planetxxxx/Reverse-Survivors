@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -26,9 +27,9 @@ public class Level : MonoBehaviour
     const int slotNum = 4;
     const float slotSize = 130f;
 
-    int maxExpValue;
-    int curExpValue;
-    static int level;
+    int maxExpValue=50;
+    int curExpValue=0;
+    static int level=1;
     static bool isLevelUpTime;
 
     enum type
@@ -37,14 +38,19 @@ public class Level : MonoBehaviour
         Accessory
     }
 
-    void Awake()
+    private void FixedUpdate()
     {
-     
+        expSlider.value = curExpValue;
+        if (curExpValue >= maxExpValue)
+        {
+            LevelUp();
+            curExpValue = curExpValue- maxExpValue;
+        }
     }
 
 
 
- 
+
 
     public static bool GetIsLevelUpTime()
     {
@@ -58,20 +64,18 @@ public class Level : MonoBehaviour
 
     public void GetExp(int value)
     {
-        if (curExpValue + value >= maxExpValue)
-        {
-            curExpValue += value - maxExpValue;
-            LevelUp();
-        }
-        else
+      
             curExpValue += value;
-
-        expSlider.value = curExpValue;
     }
 
     void LevelUp()
     {
         level++;
+
+        text.text = "LV " + level.ToString();
+
+        maxExpValue = 50 * level;
+        expSlider.maxValue = maxExpValue;
         if (level==2)
         {
             Inventory.GetInstance().AddWeapon(WeaponData.WeaponType.Axe);
@@ -101,11 +105,7 @@ public class Level : MonoBehaviour
        
 
 
-        
-        text.text = "LV " + level.ToString();
-
-        maxExpValue = 50 * level;
-        expSlider.maxValue = maxExpValue;
+      
     }
 
     IEnumerator GetNewItem()

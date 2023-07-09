@@ -65,7 +65,7 @@ public class EnemySpawner : MonoBehaviour
                    
                 while (spawnCount<5)
                 {
-                    newEnemy = ObjectPooling.GetObject(CharacterData.CharacterType.FlyingEye);
+                    newEnemy = ObjectPooling.GetObject(CharacterData.CharacterType.Bat);
                     spawnCount++;
                     newEnemy.transform.position = RandomPosition();
                     newEnemy.SetActive(true);
@@ -78,7 +78,7 @@ public class EnemySpawner : MonoBehaviour
                    
                 while (spawnCount < 3)
                 {
-                    newEnemy = ObjectPooling.GetObject(CharacterData.CharacterType.Goblin);
+                    newEnemy = ObjectPooling.GetObject(CharacterData.CharacterType.Skeleton);
                     spawnCount++;
                     newEnemy.transform.position = RandomPosition();
                     newEnemy.SetActive(true);
@@ -90,7 +90,7 @@ public class EnemySpawner : MonoBehaviour
                     
                 while (spawnCount < 2)
                 {
-                    newEnemy = ObjectPooling.GetObject(CharacterData.CharacterType.Mushroom);
+                    newEnemy = ObjectPooling.GetObject(CharacterData.CharacterType.Werewolf);
                     spawnCount++;
                     newEnemy.transform.position = RandomPosition();
                     newEnemy.SetActive(true);
@@ -99,27 +99,19 @@ public class EnemySpawner : MonoBehaviour
                 spawnCount = 0;
                 break;
                 case 4:
-                newEnemy = ObjectPooling.GetObject(CharacterData.CharacterType.FlyingEye);
+                newEnemy = ObjectPooling.GetObject(CharacterData.CharacterType.Golem);
                 newEnemy.transform.position = RandomPosition();
                 newEnemy.SetActive(true);
                 enemyList.Add(newEnemy);
                 break;
             case 5:
-                    newEnemy = ObjectPooling.GetObject(CharacterData.CharacterType.Skeleton);
+                    newEnemy = ObjectPooling.GetObject(CharacterData.CharacterType.Witch);
                 newEnemy.transform.position = RandomPosition();
                 newEnemy.SetActive(true);
                 enemyList.Add(newEnemy);
                 break;
          
-            
-
-            if(stage == 5)
-            {
-                newEnemy = ObjectPooling.GetObject(CharacterData.CharacterType.FlyingEye);
-                newEnemy.transform.position = RandomPosition();
-                newEnemy.SetActive(true);
-                enemyList.Add(newEnemy);
-            }
+           
 
             yield return new WaitForSeconds(spawnDelay);
         }
