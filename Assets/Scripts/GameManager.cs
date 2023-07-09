@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class GameManager : MonoBehaviour
 {
 
@@ -17,17 +18,30 @@ public class GameManager : MonoBehaviour
 
 	private Animator camAnim;
 
+	public GameObject prefabToInstantiate;
+	public int numberOfCards = 3;
+    public int cardInHand = 0;
+    public float delayBeforeRestart = 1f;
+	private List<GameObject> clones = new List<GameObject>();
+	public float startTime, elapsedTime;
+
+
+
+
 	private void Start()
 	{
 		camAnim = Camera.main.GetComponent<Animator>();
+		for(int i = 0; i <= 3; i++)
+		{
+			Invoke("DrawCard",0f);
+		}
+		startTime = Time.time;
 	}
 
 	public void DrawCard()
 	{
 		if (deck.Count >= 1)
 		{
-			camAnim.SetTrigger("shake");
-
 			Card randomCard = deck[Random.Range(0, deck.Count)];
 			for (int i = 0; i < availableCardSlots.Length; i++)
 			{
@@ -39,6 +53,8 @@ public class GameManager : MonoBehaviour
 					randomCard.hasBeenPlayed = false;
 					deck.Remove(randomCard);
 					availableCardSlots[i] = false;
+
+					cardInHand++;
 					return;
 				}
 			}
@@ -61,6 +77,19 @@ public class GameManager : MonoBehaviour
 	{
 		deckSizeText.text = deck.Count.ToString();
 		discardPileSizeText.text = discardPile.Count.ToString();
-	}
+		if (deck.Count <= 3)
+		{
+			Invoke("Shuffle",0.0f);
+		}
+		elapsedTime = Time.time - startTime;
+		if (elapsedTime >= 5f)
+        {
+			startTime = elapsedTime;
 
+        }
+		if(cardInHand < 3)
+		{
+			Invoke("DrawCard",0.5f);
+		}
+	}
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Card : MonoBehaviour
 {
@@ -15,28 +16,15 @@ public class Card : MonoBehaviour
 	public GameObject effect;
 	public GameObject hollowCircle;
 
+	GameObject childObject;
+	bool activChild, isfixed = false;
+
+
 	private void Start()
 	{
 		gm = FindObjectOfType<GameManager>();
 		anim = GetComponent<Animator>();
 		camAnim = Camera.main.GetComponent<Animator>();
-	}
-	private void OnMouseDown()
-	{
-		if (!hasBeenPlayed)
-		{
-			Instantiate(hollowCircle, transform.position, Quaternion.identity);
-			
-			camAnim.SetTrigger("shake");
-			anim.SetTrigger("move");
-
-			transform.position += Vector3.up * 3f;
-			hasBeenPlayed = true;
-			gm.availableCardSlots[handIndex] = true;
-			Invoke("MoveToDiscardPile", 2f);
-
-			
-		}
 	}
 
 	void MoveToDiscardPile()
@@ -46,6 +34,34 @@ public class Card : MonoBehaviour
 		gameObject.SetActive(false);
 	}
 
+  
+
+    private void OnMouseOver()
+    {
+		if(Input.GetMouseButtonDown(0) && !isfixed)
+		{
+			Invoke("destroyCard",0.5f);
+		}
+		/*if(Input.GetMouseButtonDown(1))
+		{
+			childObject.SetActive(!activChild);
+			activChild = !activChild;
+			isfixed = !isfixed;
+		}*/
+		childObject = transform.GetChild(0).gameObject;
+    }
 
 
+	public void destroyCard()
+	{
+		Instantiate(hollowCircle, transform.position, Quaternion.identity);
+		
+		camAnim.SetTrigger("shake");
+		anim.SetTrigger("move");
+			
+		gm.availableCardSlots[handIndex] = true;
+		Invoke("MoveToDiscardPile", 0.5f);
+			
+		gm.cardInHand--;
+	}
 }

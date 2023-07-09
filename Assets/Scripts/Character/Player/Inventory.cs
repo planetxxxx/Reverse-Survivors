@@ -27,7 +27,7 @@ public class Inventory : MonoBehaviour
 
     WeaponSpawner bible;
 
-    const int slotNum = 6;
+    const int slotNum = 3;
     const float slotSize = 30f;
 
     private Inventory() { }

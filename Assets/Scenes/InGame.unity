@@ -410,6 +410,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56950203}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
 --- !u!1 &75749755
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,6 +487,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75749755}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> Stashed changes
 --- !u!1 &95297812
 GameObject:
   m_ObjectHideFlags: 0
@@ -12909,8 +12912,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05, y: 0.66}
-  m_Size: {x: 0.7, y: 1.3}
+  m_Offset: {x: -0.1089707, y: -0.0329113}
+  m_Size: {x: 1.8204528, y: 4.572903}
   m_Direction: 0
 --- !u!114 &335220098
 MonoBehaviour:
@@ -12942,7 +12945,11 @@ Transform:
   m_GameObject: {fileID: 335220096}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+=======
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 519420032}
@@ -13008,7 +13015,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ae297123f091bbf4e8f1835eb98fb293, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 786cf2667fbcbe445a1085a014c28062, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13064,7 +13071,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335220096}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3c2a5b7097b0fe44394328c0bdb9252e, type: 2}
   m_CullingMode: 0
@@ -19039,7 +19046,7 @@ RectTransform:
   - {fileID: 2088132808}
   - {fileID: 210636434}
   m_Father: {fileID: 2077513276}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19784,7 +19791,7 @@ RectTransform:
   - {fileID: 2050719761}
   - {fileID: 461427643}
   m_Father: {fileID: 2077513276}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20001,7 +20008,7 @@ RectTransform:
   - {fileID: 1184580840}
   - {fileID: 1052091227}
   m_Father: {fileID: 2077513276}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20041,7 +20048,11 @@ RectTransform:
   m_Children:
   - {fileID: 12147728}
   m_Father: {fileID: 2077513276}
+<<<<<<< Updated upstream
   m_RootOrder: 9
+=======
+  m_RootOrder: 7
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20737,7 +20748,7 @@ RectTransform:
   - {fileID: 1607659317}
   - {fileID: 662247922}
   m_Father: {fileID: 2077513276}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -21214,7 +21225,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7, y: -25}
+  m_AnchoredPosition: {x: -4.2, y: -55.7}
   m_SizeDelta: {x: 55, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1704161233
@@ -21690,7 +21701,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 335220099}
+<<<<<<< Updated upstream
   killCountText: {fileID: 1938993867}
+=======
+  killCountText: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1 &1829972484
 GameObject:
   m_ObjectHideFlags: 0
@@ -21910,6 +21925,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872641426}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
 --- !u!1 &1893296995
 GameObject:
   m_ObjectHideFlags: 0
@@ -22059,6 +22075,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOverWindow: {fileID: 1225765235}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1900072118
 GameObject:
   m_ObjectHideFlags: 0
@@ -26979,7 +26997,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2077513276}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -27080,6 +27098,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930710460}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
 --- !u!1 &1938993865
 GameObject:
   m_ObjectHideFlags: 0
@@ -27216,6 +27235,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938993865}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1955977738
 GameObject:
   m_ObjectHideFlags: 0
@@ -27919,8 +27940,6 @@ RectTransform:
   m_Children:
   - {fileID: 1704161232}
   - {fileID: 1725758289}
-  - {fileID: 1893296996}
-  - {fileID: 1938993866}
   - {fileID: 1524647314}
   - {fileID: 665965416}
   - {fileID: 1225765236}
